@@ -2,6 +2,7 @@ import React from "react";
 
 const Article = ({ article }) => {
   //Sconsole.log(article);
+  //Voir documentation toLocaleDateString()
   const dateFormater = (date) => {
     let newDate = new Date(date).toLocaleDateString("fr-FR", {
       year: "numeric",
