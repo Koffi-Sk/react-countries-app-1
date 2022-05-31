@@ -28,6 +28,9 @@ const Blog = () => {
         date: Date.now(),
       });
       setError(false);
+      setAuthor("");
+      setContent("");
+      getData();
     }
   };
   return (
@@ -41,11 +44,13 @@ const Blog = () => {
           type="text"
           placeholder="Nom"
           onChange={(e) => setAuthor(e.target.value)}
+          value={author}
         />
         <textarea
           style={{ border: error ? "1px solid red" : "1px solid #61dafb" }} // Style conditionnel
           placeholder="Message"
-          onChangeCapture={(e) => setContent(e.target.value)}
+          onChange={(e) => setContent(e.target.value)}
+          value={content}
         ></textarea>
         {error && <p>Veuillez écrire un minimum de 140 caractères</p>}
         <input type="submit" value="Envoyer" />
